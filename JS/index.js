@@ -50,8 +50,11 @@ function checkNgayKham() {
     }
 }
 
+$("#mabenhnhan").blur(checkMaBenhNhan);
+$("#matkhau").blur(checkMatKhau);
+$("#ngaykham").blur(checkNgayKham);
 
-// $("#form").submit((e) => e.preventDefault());
+$("#form").submit((e) => e.preventDefault());
 function themMoi(){
     const ma = $("#mabenhnhan").val();
     const matKhau = $("#matkhau").val();
