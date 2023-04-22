@@ -8,8 +8,9 @@
 
     <link rel="stylesheet" href="../CSS/style.css" />
     <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
-    <script src="../JS/bootstrap.min.js"></script>
     <script src="../JS/jquery-3.6.0.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    
   </head>
   <body>
     <div class="container-fluid">
@@ -25,7 +26,7 @@
             <a href="../HTML/cuoiKy.html" class="nav-link">Trang chủ</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link" data-toggle="modal" data-target="#modal">Đặt lịch</a>
+            <a href="#" class="nav-link" id="open-modal">Đặt lịch</a>
           </li>
         </ul>
       </nav>
@@ -40,7 +41,10 @@
           <th>Chuyên khoa</th>
         </tr>
 
-        <tbody id="tbody"></tbody>
+        <tbody id="tbody">
+
+          
+        </tbody>
       </table>
 
       <footer>
@@ -58,10 +62,10 @@
             </div>
 
             <div class="modal-body">
-              <form action="" id="form">
-                <div class="row ml-1 mb-3">
-                  <p><b>Mã bệnh nhân</b></p>
-                  <input
+              <form action="" id="form" class="/action_page.php">
+                <div class="form-group">
+                  <label for="mabenhnhan"><b>Mã bệnh nhân</b></label>
+                  <input class="form-control" 
                     type="text"
                     id="mabenhnhan"
                     placeholder="Mã bệnh nhân"
@@ -69,33 +73,31 @@
                   <span class="ma-mes text-danger"><i>(*)</i></span>
                 </div>
 
-                <div class="row ml-1 mb-3">
-                  <p><b>Mật khẩu</b></p>
-                  <input type="text" id="matkhau" placeholder="Mật khẩu" />
+                <div class="form-group">
+                  <label for="matkhau"><b>Mật khẩu</b></label>
+                  <input class="form-control" type="text" id="matkhau" placeholder="Mật khẩu" />
                   <span class="mk-mes text-danger"><i>(*)</i></span>
                 </div>
 
-                <div class="row ml-1 mb-3">
-                  <p><b>Ngày khám</b></p>
-                  <input type="date" id="ngaykham" />
+                <div class="form-group">
+                  <label for="ngaykham"><b>Ngày khám</b></label>
+                  <input class="form-control" type="date" id="ngaykham" />
                   <span class="nk-mes text-danger"><i>(*)</i></span>
                 </div>
 
-                <div class="row ml-1 mb-3">
-                  <p><b>Loại dịch vụ</b></p>
-                  <div class="checkbox">
+                <div class="form-group  form-check">
+                  <label class="form-check-label"><b>Loại dịch vụ</b></label><br>
                     <input type="checkbox" id="phuthuKhamBenh" />
                     <label for="phuthuKhamBenh">Khám bệnh theo yêu cầu</label>
                     <input type="checkbox" id="phuthuDieuTri" />
                     <label for="phuthuDieuTri">Điều trị ngoại trú</label>
                     <input type="checkbox" id="phuthuBacSi" />
                     <label for="phuthuBacSi">Bác sĩ theo yêu cầu</label>
-                  </div>
                 </div>
 
-                <div class="row ml-1 mb-3">
-                  <p><b>Chuyên khoa</b></p>
-                  <select id="chuyenkhoa">
+                <div class="form-group">
+                  <label><b>Chuyên khoa</b></label>
+                  <select id="chuyenkhoa" class="form-control">
                     <option value="Ngoại tổng quát">Ngoại tổng quát</option>
                     <option value="Nhi">Nhi</option>
                     <option value="Nội tổng quát">Nội tổng quát</option>

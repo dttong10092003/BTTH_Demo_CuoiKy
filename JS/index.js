@@ -1,5 +1,4 @@
 let stt = 0;
-
 // Check mã bệnh nhân 
 function checkMaBenhNhan() {
     const maBenhNhan = $("#mabenhnhan").val();
@@ -8,7 +7,7 @@ function checkMaBenhNhan() {
         return false;
     }
     const regex = /^BN-\d{5}$/;
-    if (ma.test(maBenhNhan)) {
+    if (regex.test(maBenhNhan)) {
         $(".ma-mes").html("(*)");
         return true;
     } else {
@@ -38,7 +37,7 @@ function checkMatKhau(){
 function checkNgayKham() {
     var ngayKham = new Date($("#ngaykham").val());
     var currentDate = new Date();
-    if (!ngaykham) {
+    if (!ngayKham) {
         $(".nk-mes").html("Chưa chọn ngày khám");
         return false;
     }
@@ -51,18 +50,16 @@ function checkNgayKham() {
     }
 }
 
-$("#makhambenh").blur(checkMaBenhNhan);
-$("#matkhau").blur(checkMatKhau);
-$("#ngaykham").blur(checkNgayKham);
-$("#form").submit((e) => e.preventDefault());
+
+// $("#form").submit((e) => e.preventDefault());
 function themMoi(){
     const ma = $("#mabenhnhan").val();
     const matKhau = $("#matkhau").val();
-    const ngayKham = $("#ngayKham").val();
+    const ngayKham = $("#ngaykham").val();
     // const phuThuKhamBenh = document.getElementById("phuThuKhamBenh").checked;
     // const phuThuDieuTri = document.getElementById("phuthuDieuTri").checked;
     // const phuThuBacSi = document.getElementById("phuthuBacSi").checked;
-    const phuThuKhamBenh = $("#phuThuKhamBenh").prop("checked");
+    const phuThuKhamBenh = $("#phuthuKhamBenh").prop("checked");
     const phuThuDieuTri = $("#phuthuDieuTri").prop("checked");
     const phuThuBacSi = $("#phuthuBacSi").prop("checked");
     // const chuyenKhoa = document.getElementById("chuyenkhoa").value;
@@ -89,7 +86,6 @@ function reSet(){
     $("#modal").modal("hide");
 }
 
-
 $("#btn-submit").click(()=>{
     const ma = checkMaBenhNhan();
     const mk = checkMatKhau();
@@ -98,8 +94,19 @@ $("#btn-submit").click(()=>{
     if (ma && mk && nk) {
         themMoi();
         reSet();
+        // $("#modal").modal("none");
     }
 })
+
+// document.getElementById("open-modal").addEventListener("click",()=>{
+//     document.getElementById("modal").style.display = "block";
+// });
+
+$("#open-modal").click(() => {
+    $("#modal").modal("show");
+  });
+
+
 
 
 
